@@ -1,32 +1,67 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <ul>
+          <li id="logo">DMLA THEATRE</li>
+          <li><router-link to="/" id="playingNow">Playing Now</router-link></li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li>Login</li>
+          <li>=</li>
+        </ul>
+      </div>
     </nav>
-    <router-view />
+    <div>
+      <router-view />
+    </div>
   </div>
 </template>
 
+<script>
+
+</script>
+ 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.navbar {
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 32px;
+  padding-left: 32px;
+  color: white;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
-nav {
-  padding: 30px;
+.navbar li {
+  padding: 1rem;
+}
+#logo {
+  color: rgb(222, 214, 232);
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#playingNow {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+#playingNow :hover {
+  color: rgb(206, 18, 18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>
