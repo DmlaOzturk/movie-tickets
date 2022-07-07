@@ -20,6 +20,6 @@ export default {
 
 <style>
 .movies {
-  background-color: black;
+  background-color: rgb(29, 29, 29);
 }
 </style>

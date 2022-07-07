@@ -1,11 +1,13 @@
 <template>
   <div id="cards">
     <div id="card" v-for="(data, index) in nowPlayingData.results" :key="index">
-      <img
-        class="movieImg"
-        :src="`https://image.tmdb.org/t/p/w500/${data.poster_path}`"
-        alt=""
-      />
+      <router-link :to="`/movie/${data.id}`">
+        <img
+          class="movieImg"
+          :src="`https://image.tmdb.org/t/p/w500/${data.poster_path}`"
+          alt=""
+        />
+      </router-link>
       <p class="movie-title">{{ data.title }}</p>
       <p class="movie-information">{{ data.overview }}</p>
     </div>
@@ -13,7 +15,6 @@
 </template>
 
 <script>
-
 import { mapActions, mapGetters } from "vuex";
 
 export default {
@@ -22,16 +23,11 @@ export default {
   },
   methods: {
     ...mapActions(["fetchMovieData"]),
-
-    getId(i) {
-      console.log(i);
-    },
   },
   mounted() {
     this.fetchMovieData();
   },
 };
-
 </script>
 
 <style scoped>
@@ -49,7 +45,7 @@ export default {
 }
 #card {
   margin: 1rem;
-  background-color: rgb(218, 216, 216);
+  background-color: rgb(245, 238, 238);
 }
 .movieImg {
   height: 440px;

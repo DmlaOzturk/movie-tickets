@@ -4,7 +4,10 @@
       <div class="navbar-left">
         <ul>
           <li id="logo">DMLA THEATRE</li>
-          <li><router-link to="/" id="playingNow">Playing Now</router-link></li>
+          <li><router-link to="/" id="playingNow"> on theatre</router-link></li>
+          <li>
+            <router-link to="/search/movie" id="searchView">search</router-link>
+          </li>
         </ul>
       </div>
       <div class="navbar-right">
@@ -20,10 +23,8 @@
   </div>
 </template>
 
-<script>
+<script></script>
 
-</script>
- 
 <style>
 .navbar {
   height: 80px;
@@ -55,7 +56,11 @@
   color: white;
   text-transform: uppercase;
 }
-
+#searchView {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
 #playingNow :hover {
   color: rgb(206, 18, 18);
 }
