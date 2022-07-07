@@ -8,6 +8,8 @@ export default new Vuex.Store({
     nowPlayingData: [],
     searchMovieData: [],
     searchMovieQuery: "",
+    login_mail: "",
+    login_password: "",
   },
   getters: {
     nowPlayingData: (state) => state.nowPlayingData,
@@ -38,15 +40,12 @@ export default new Vuex.Store({
       );
       const data = await response.json();
       commit("SET_MOVIE_DATA", data);
-      console.log(this.searchMovieQuery, "moviefetch");
     },
 
     async fetchSearchMovie({ commit, state }) {
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/multi?api_key=dd3b96ec11fae058854554b38e6c4b56&language=en-US&query=${state.searchMovieQuery}&page=1&include_adult=false
-        `
+        `https://api.themoviedb.org/3/search/movie?api_key=dd3b96ec11fae058854554b38e6c4b56&language=en-US&query=${state.searchMovieQuery}&page=1&include_adult=false`
       );
-      console.log(state.searchMovieQuery, "fetch search");
       const searchData = await response.json();
       commit("SET_SEARCH_DATA", searchData);
     },

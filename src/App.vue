@@ -12,7 +12,7 @@
       </div>
       <div class="navbar-right">
         <ul>
-          <li>Login</li>
+          <router-link to="/login" id="loginView">Login</router-link>
           <li>=</li>
         </ul>
       </div>
@@ -63,6 +63,11 @@
 }
 #playingNow :hover {
   color: rgb(206, 18, 18);
+}
+#loginView {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
 }
 
 * {

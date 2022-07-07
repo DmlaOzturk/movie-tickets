@@ -46,6 +46,10 @@ export default {
 #card {
   margin: 1rem;
   background-color: rgb(245, 238, 238);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .movieImg {
   height: 440px;
