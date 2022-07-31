@@ -10,6 +10,8 @@ export default new Vuex.Store({
     searchMovieQuery: "",
     login_mail: "",
     login_password: "",
+    loginModalOpen: false,
+    signUpModalOpen: false,
   },
   getters: {
     nowPlayingData: (state) => state.nowPlayingData,

@@ -20,6 +20,8 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  name: "detailModal",
+
   data() {
     return {
       url_id: null,

@@ -3,14 +3,12 @@ import VueRouter from "vue-router";
 import HomePageView from "../views/HomePageView.vue";
 import MovieModalView from "../views/MovieModalView.vue";
 import SearchView from "../views/SearchView.vue";
-import LoginView from "../views/LoginView.vue";
-import SignUpView from "../views/SignUpView.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/:modal",
     name: "home",
     component: HomePageView,
   },
@@ -23,16 +21,6 @@ const routes = [
     path: "/search/movie",
     name: "searchView",
     component: SearchView,
-  },
-  {
-    path: "/login",
-    name: "loginView",
-    component: LoginView,
-  },
-  {
-    path: "/sign-up",
-    name: "signUp",
-    component: SignUpView,
   },
 ];
 

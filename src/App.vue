@@ -4,7 +4,9 @@
       <div class="navbar-left">
         <ul>
           <li id="logo">DMLA THEATRE</li>
-          <li><router-link to="/" id="playingNow"> on theatre</router-link></li>
+          <li>
+            <router-link to="/:modal" id="playingNow"> on theatre</router-link>
+          </li>
           <li>
             <router-link to="/search/movie" id="searchView">search</router-link>
           </li>
@@ -12,18 +14,37 @@
       </div>
       <div class="navbar-right">
         <ul>
-          <router-link to="/login" id="loginView">Login</router-link>
+          <li id="loginView" @click="openLoginModal">Login</li>
           <li>=</li>
         </ul>
       </div>
     </nav>
     <div>
       <router-view />
+      <login-view v-model="loginModalOpen"></login-view>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import LoginView from ".//views/LoginView.vue";
+
+export default {
+  components: {
+    LoginView,
+  },
+  data() {
+    return {
+      loginModalOpen: false,
+    };
+  },
+  methods: {
+    openLoginModal() {
+      this.loginModalOpen = !this.loginModalOpen;
+    },
+  },
+};
+</script>
 
 <style>
 .navbar {
